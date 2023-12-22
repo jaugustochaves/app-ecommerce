@@ -1,6 +1,8 @@
 import React from "react";
 import { StyleSheet, Image, Dimensions, Text, View } from "react-native";
 
+import Texto from "../componets/Texto";
+
 import topo from '../../assets/topo.png';
 import logo from '../../assets/logo.png';
 const width = Dimensions.get('screen').width;
@@ -8,15 +10,15 @@ const width = Dimensions.get('screen').width;
 export default function Cesta() {
     return <>
         <Image source={topo} style={estilos.topo} />
-        <Text style={estilos.titulo}>Detalhe da Cesta</Text>
+        <Texto style={estilos.titulo}>Detalhe da Cesta</Texto>
         <View style={estilos.cesta}>
-            <Text style={estilos.subtitulo}>Cesta de Verduras</Text>
+            <Texto style={estilos.subtitulo}>Cesta de Verduras</Texto>
             <view style={estilos.vFabricante}>
                 <Image source={logo} style={estilos.imagemLogo} />
-                <Text style={estilos.fabricante}>Jenny Jack Farm</Text>
+                <Texto style={estilos.fabricante}>Jenny Jack Farm</Texto>
             </view>
-            <Text style={estilos.descricao}>Uma cesta com produtos selecionados cuidadozamente da fazenda direto para a sua cozinha</Text>
-            <Text style={estilos.preco}>R$ 40,00</Text>
+            <Texto style={estilos.descricao}>Uma cesta com produtos selecionados cuidadozamente da fazenda direto para a sua cozinha</Texto>
+            <Texto style={estilos.preco}>R$ 40,00</Texto>
         </View>
     </>
 }
