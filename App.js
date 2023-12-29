@@ -1,25 +1,26 @@
-import { SafeAreaView, StatusBar, View } from 'react-native';
-import Cesta from './src/pages/Cesta';
-import {
-  useFonts,
-  Montserrat_400Regular,
-  Montserrat_400Regular_Italic,
-  Montserrat_700Bold
+import React from 'react';
+import { StatusBar, SafeAreaView, View } from 'react-native';
+import { 
+  useFonts, 
+  Montserrat_400Regular, 
+  Montserrat_700Bold,
 } from '@expo-google-fonts/montserrat';
-import mock from './src/mocks/Cesta';
+import AppLoading from 'expo-app-loading';
+import Cesta from './src/telas/Cesta';
+import mock from './src/mocks/cesta';
 
 export default function App() {
-  const [fonte] = useFonts({
+  const [fonteCarregada] = useFonts({
     "MontserratRegular": Montserrat_400Regular,
-    "MontserratBold": Montserrat_700Bold
+    "MontserratBold": Montserrat_700Bold,
   });
 
-  if (!fonte){
-    return <View />
+  if (!fonteCarregada) {
+    return <AppLoading />
   }
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <StatusBar />
       <Cesta {...mock} />
     </SafeAreaView>
